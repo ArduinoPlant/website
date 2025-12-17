@@ -4,6 +4,16 @@
 		<title>Arduino Plant Technical</title>
 		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			table, th, td {
+				 border: 1px solid black;
+				 border-collapse: collapse;
+				 padding: 8px;
+			 }
+			 body {
+		         background-color: rgb(227,255,215);
+			 }
+		 </style>
 	</head>
 	
 	<body>
@@ -23,15 +33,11 @@
 		electrode drops.</p>
 		
 		<p>	
-			<div class="row">
-			   <div class="column">
-				  <img src="sch1a.jpg" width="200" alt="sch1a.jpg">
-			   </div>
-			   <div class="column">
-				  <img src="sch2a.jpg" width="200" alt="sch2a.jpg">
-			   </div>
-			</div>
-		</p>
+		  <div>
+		    <img src="sch1a.jpg" width="200/"/><img src="sch1a.jpg" width="200/"/>
+		  </div>
+		  <br/>
+		<p>
 		
 		<p>The positive electrode is connected to the analog input on the arduino. At 0 volt analog input, 
 		the arduino reads 0 and at +5 volt analog input, the arduino reads 1023. For any voltage in between, 
