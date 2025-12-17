@@ -5,11 +5,6 @@
 		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
-			table, th, td {
-				 border: 1px solid black;
-				 border-collapse: collapse;
-				 padding: 8px;
-			 }
 			 body {
 		         background-color: rgb(227,255,215);
 			 }
@@ -39,16 +34,24 @@
 		  <br/>
 		<p>
 		
-		<p>The positive electrode is connected to the analog input on the arduino. At 0 volt analog input, 
-		the arduino reads 0 and at +5 volt analog input, the arduino reads 1023. For any voltage in between, 
-		the ardiono reads in between 0 and 1023.
-		When the soil sample is dry, there is no soil current conduction and therefore the positve electrode 
-		remains close to 5 volts and high analog input, close to 1023 is expected.
-		When the soil sample is wet, there is soil current conduction and therefore the positve electrode 
-		drops to a voltage lower than 5 volts 9approximately 2.5 volts) and low analog input, close to 512 is expected.		
-		We have set a value of analog read 800 to be the deciding point to turn ON the ardiono output to
+		<p>The positive electrode is connected to the analog input on the arduino. At zero volt analog input, 
+		the arduino reads zero and at +5 volt analog input, the arduino reads 1023. For any voltage in between, 
+		the ardiono reads in between zero and 1023.</p>
+		
+		<p>When the soil sample is dry, there is no soil current conduction and therefore the positve electrode 
+		remains close to 5 volts and high analog input, close to 1023 is expected from Arduino analog read. </p>
+		
+		<p>When the soil sample is wet, there is soil current conduction and therefore the positve electrode 
+		drops to a voltage lower than 5 volts (approximately 2.5 volts) and low analog input, close to 512 is expected.		
+		We have set a value of analog read to be 800 or above to be the deciding point to turn ON the arduino output to
 		the motor pump. A value less than 700 indicates a wet sample and arduino output to pump motor is low 
 		i.e. OFF.</p>	
+		
+		<p>An output (pin 13) is declared on Arduino and is connected to the motor driver, MX1317H. The motor driver 
+		takes an input from Arduino and depending on the input, switches on the power to the 5 volt motor pump.
+		It gets a power input from the power supply. The power supply is a five volt two ampere voltage regulator 
+		powered by 220 volt AC mains</p>
+		
 		<!--
 		<p>
 			<video width="360" height="640" controls>
