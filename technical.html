@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Arduino Plant Technical</title>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			table, th, td {
+				 border: 1px solid black;
+				 border-collapse: collapse;
+				 padding: 8px;
+			 }
+			 body {
+		         background-color: rgb(227,255,215);
+			 }
+		 </style>
+	</head>
+	
+	<body>
+	    <h3>Arduino Plant Technical</h3>
+		
+		<h3>Arduino Plant Working</h3>
+		
+		<p>At the heart of the project is a soil moisture sensor. The soil moisture sensor consists of 
+		two electrodes. When the soil is dry, there is no or very little conduction of electrons through 
+		the soil. One electrode is connected to +5 volts through a 10 KOhm pull-up resistor. The other electrode 
+		is connected to ground. When there is no conduction through the dry soil, the current through the 10 Kohm 
+		resistor is zero and the voltage drop across the 10 Kohm resistor is zero. Therefore the voltage 
+		at the positive electrode is +5 volts.
+		Now consider that the soil moisture sensor is in wet soil. Now there is conduction of 
+		electrons between the two electrodes. The wet soil acts like a resistor. The circuit with 10 KOhm 
+		resistor and soil moisture resistor acts like a voltage divider circuit. The voltage on the positive 
+		electrode drops.</p>
+		
+		<p>
+			<img src="sch1.jpg" width="400" alt="sch1.jpg">
+		</p>
+		
+		<p>The positive electrode is connected to the analog input on the arduino. At 0 volt analog input, 
+		the arduino reads 0 and at +5 volt analog input, the arduino reads 1023. For any voltage in between, 
+		the ardiono reads in between 0 and 1023.
+		When the soil sample is dry, there is no soil current conduction and therefore the positve electrode 
+		remains close to 5 volts and high analog input, close to 1023 is expected.
+		When the soil sample is wet, there is soil current conduction and therefore the positve electrode 
+		drops to a voltage lower than 5 volts 9approximately 2.5 volts) and low analog input, close to 512 is expected.		
+		We have set a value of analog read 800 to be the deciding point to turn ON the ardiono output to
+		the motor pump. A value less than 700 indicates a wet sample and arduino output to pump motor is low 
+		i.e. OFF.</p>	
+		<!--
+		<p>
+			<video width="360" height="640" controls>
+				<source src="trafficRadarRoad.mp4" type="video/mp4">
+	        </video>
+		</p>
+		-->
+		
+		<h2><a href="https://ArduinoPlant.github.io/website/index.html">Back to Homepage</a></h2>
+		
+	</body>
+</html>
