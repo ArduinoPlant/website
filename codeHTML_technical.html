@@ -1,0 +1,235 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>                #define LED_OUTPUT 13</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:28.35pt 28.35pt 28.35pt 28.35pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><span lang=EN-GB>&lt;!DOCTYPE html&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&lt;html lang=&quot;en&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>            &lt;head&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;title&gt;Arduino
+Plant Technical&lt;/title&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;meta
+charset=&quot;utf-8&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                          &lt;meta
+name=&quot;viewport&quot; content=&quot;width=device-width,
+initial-scale=1&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;style&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                                     body {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                                         
+background-color: rgb(227,255,215);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                                     }</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                         &lt;/style&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>            &lt;/head&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>            </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>            &lt;body&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                &lt;h3&gt;Arduino Plant
+Technical&lt;/h3&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;h3&gt;Arduino
+Plant Working&lt;/h3&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;p&gt;At the
+heart of the project is a soil moisture sensor. The soil moisture sensor
+consists of </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        two electrodes. When
+the soil is dry, there is no or very little conduction of electrons through </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        the soil. One
+electrode is connected to +5 volts through a 10 KOhm pull-up resistor. The
+other </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        electrode  is
+connected to ground. When there is no conduction through the dry soil, the
+current      </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        through the 10 Kohm
+resistor is zero and the voltage drop across the 10 Kohm resistor is zero.     </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                       Therefore the
+voltage at the positive electrode is +5 volts.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        Now consider that
+the soil moisture sensor is in wet soil. Now there is conduction of </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        electrons between
+the two electrodes. The wet soil acts like a resistor. The circuit with 10 KOhm
+</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        resistor and soil
+moisture resistor acts like a voltage divider circuit. The voltage on the
+positive </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        electrode
+drops.&lt;/p&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;p&gt;      </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                          &lt;div&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                            &lt;img
+src=&quot;sch1.jpeg&quot; width=&quot;200/&quot;/&gt; &lt;img
+src=&quot;sch2.jpeg&quot; width=&quot;200/&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                          &lt;/div&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                          &lt;br/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;p&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;p&gt;The
+positive electrode is connected to the analog input on the arduino. At zero
+volt analog  </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                                input, the
+arduino reads zero and at +5 volt analog input, the arduino reads 1023. For
+any  </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                                voltage in
+between, the ardiono reads in between zero and 1023.&lt;/p&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;p&gt;When the
+soil sample is dry, there is no soil current conduction and therefore the
+positve e  </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                               electrode
+remains close to 5 volts and high analog input, close to 1023 is expected from 
+</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                               Arduino
+analog read. &lt;/p&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;p&gt;When the
+soil sample is wet, there is soil current conduction and therefore the positve </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                               electrode
+drops to a voltage lower than 5 volts (approximately 2.5 volts) and low analog </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                               input, close
+to 512 is expected.               </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                               We have set
+a value of analog read to be 800 or above to be the deciding point to turn ON  </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                               the arduino
+output to the motor pump. A value less than 700 indicates a wet sample and  </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                               arduino
+output to pump motor is low i.e. OFF.&lt;/p&gt;       </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;p&gt;An output
+(pin 13) is declared on Arduino and is connected to the motor driver, MX1616H. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                               The motor
+driver takes an input from Arduino and depending on the input, switches on
+the       </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                                power to
+the 5 volt motor pump. It gets a power input from the power supply. The power </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                                supply is a
+five volt two ampere voltage regulator powered by 220 volt AC mains&lt;/p&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;p&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;h3&gt;&lt;a
+href=&quot;https://ArduinoPlant.github.io/website/codeHTML.html&quot;&gt;Website
+Code </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                                     
+HTML&lt;/a&gt;&lt;/h3&gt;      </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;/p&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;p&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;h3&gt;&lt;a
+href=&quot;https://ArduinoPlant.github.io/website/arduinoCode.html&quot;&gt;Arduino
+Plant </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                                  
+Code&lt;/a&gt;&lt;/h3&gt;            </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;/p&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;p&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;h2&gt;&lt;a
+href=&quot;https://ArduinoPlant.github.io/website/index.html&quot;&gt;Back to
+Homepage&lt;/a&gt;&lt;/h2&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        &lt;/p&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>            &lt;/body&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&lt;/html&gt;</span></p>
+
+</div>
+
+</body>
+
+</html>
