@@ -1,0 +1,109 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>                #define LED_OUTPUT 13</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:28.35pt 28.35pt 28.35pt 28.35pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><span lang=EN-GB>                #define LED_OUTPUT 13</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                #define ON 1</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                #define OFF 0</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                int sensorValue;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                int pump;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                void setup() {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        Serial.begin(9600);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        // initialize
+digital pin LED_BUILTIN as an output.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        pinMode(LED_OUTPUT,
+OUTPUT);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        pump = OFF;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                }</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                void loop() {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                  </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                  delay(1000);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                  sensorValue = analogRead(A0);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                 
+Serial.println(sensorValue);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                  if (pump == ON) {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        if (sensorValue
+&lt; 700) {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                          pump = OFF;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                          digitalWrite(LED_OUTPUT,
+LOW);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        }</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                  }</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                  else</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                  {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        if (sensorValue
+&gt; 800) {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                          pump = ON;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                          digitalWrite(LED_OUTPUT,
+HIGH);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                        }</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                  }</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>                }</span></p>
+
+</div>
+
+</body>
+
+</html>
